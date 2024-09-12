@@ -436,6 +436,78 @@ transform: translateY(-50%);
 }
 
 
+.carousal::before{
+    width: 500px;
+    height: 300px;
+    content: '';
+    background-image: linear-gradient(
+        45deg, #dc422a, blue
+    );
+    position: absolute;
+    z-index: -1;
+    border-radius: 20% 30% 80% 10%;
+    filter: blur(150px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-10%, -50%);
+    transition: 1s;
+}
+
+.carousal.showDetail::before{
+    transform: translate(-100%, -50%) rotate(70deg);
+}
+
+@media screen and (max-width: 991px){
+    /*ipad-tablet*/
+    .carousal .list .item{
+        width: 90%;
+    }
+    .carousal .list .detail .specification{
+        overflow: auto;
+    }
+    
+}
+
+@media screen and (max-width: 767px) {
+    /*mobile screen size*/
+    .carousal .list .item{
+        width: 100%;
+        font-size: 10px;
+
+    }
+    .carousal {
+        height: 600px;
+    }
+    .carousal .list{
+        height: 100%;
+    }
+
+    .carousal .list .item .intro{
+        width: 50%;
+    }
+
+    .carousal .list .item img{
+        width: 40%;
+    }
+
+    .carousal.showDetail .list .item .detail .title{
+        font-size: 2em;
+    }
+
+    .carousal.showDetail .list .item .detail .des{
+        height: 100px;
+        overflow: auto;
+    }
+
+    .carousal.showDetail .list .item .detail .checkout{
+        display: flex;
+        width: max-content;
+        float: right;
+        
+    }
+}
+
+
 
 
 
