@@ -36,6 +36,22 @@ prevButton.onclick = function(){
 }
 
 
+seeMoreButtons.forEach(button => {
+    button.onclick = function(){
+        for(let i=0; i<carousal.length; i++){
+            carousal[i].classList.add('showDetail')
+
+        }
+    }
+})
+
+backButton.onclick = function(){
+    for(let i = 0; i<carousal.length; i++){
+    carousal[i].classList.remove('showDetail')
+    }
+}
+
+
 
 
 
